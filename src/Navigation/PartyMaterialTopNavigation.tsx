@@ -12,8 +12,8 @@ const PartyMaterialTopNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: {
-          backgroundColor: theme === 'dark' ? '#121212' : '#ffffff', // Dark or light mode
+        tabBarStyle: {          
+          backgroundColor: theme === 'dark' ? '#121212' : '#ffffff', // Dark or light mode          
         },
         tabBarLabelStyle: {
           fontSize: 14,
@@ -24,9 +24,11 @@ const PartyMaterialTopNavigation = () => {
         tabBarIndicatorStyle: {
           backgroundColor: theme === 'dark' ? '#bb86fc' : '#6200ee', // Indicator color
           height: 3, // Indicator thickness
-        },
+          borderRadius:20,
+          
+        },        
       }}>
-      <Tab.Screen name="Customers" component={CustomerScreen} />
+      <Tab.Screen name="Customers" component={CustomerScreen}  />
       <Tab.Screen name="Suppliers" component={SupplierScreen} />
     </Tab.Navigator>
   );

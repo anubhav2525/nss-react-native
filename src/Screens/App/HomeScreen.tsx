@@ -1,4 +1,4 @@
-import {SafeAreaView, ScrollView, StatusBar, View} from 'react-native';
+import {SafeAreaView, ScrollView, StatusBar, Text, View} from 'react-native';
 import React from 'react';
 import {useTheme} from '../../context/ThemeContext';
 import Header from '../../Components/Header/Header';
@@ -6,7 +6,8 @@ import Header from '../../Components/Header/Header';
 const HomeScreen = () => {
   const {theme} = useTheme();
   return (
-    <SafeAreaView className="bg-white dark:bg-black flex-1">
+    <SafeAreaView
+      className={`flex-1 ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
       <StatusBar
         backgroundColor={theme === 'dark' ? '#000000' : '#ffffff'}
         barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
@@ -14,7 +15,11 @@ const HomeScreen = () => {
       <View>
         <Header />
       </View>
-      <ScrollView></ScrollView>
+      <ScrollView>
+        <View>
+          <Text>Home Screen</Text>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

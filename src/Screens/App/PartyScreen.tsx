@@ -7,7 +7,7 @@ import PartyMaterialTopNavigation from '../../Navigation/PartyMaterialTopNavigat
 const PartyScreen = () => {
   const {theme} = useTheme();
   return (
-    <SafeAreaView>
+    <SafeAreaView className={`flex-1 ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
       <StatusBar
         backgroundColor={theme === 'dark' ? '#000000' : '#ffffff'}
         barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
@@ -15,10 +15,9 @@ const PartyScreen = () => {
       <View>
         <Header />
       </View>
-      <View>
+      <View className="flex-1">
         <PartyMaterialTopNavigation />
       </View>
-      <Text>Party screen</Text>
     </SafeAreaView>
   );
 };

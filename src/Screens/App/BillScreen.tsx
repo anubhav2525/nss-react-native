@@ -1,4 +1,4 @@
-import {View, Text, SafeAreaView, StatusBar} from 'react-native';
+import {View, Text, SafeAreaView, StatusBar, ScrollView} from 'react-native';
 import React from 'react';
 import {useTheme} from '../../context/ThemeContext';
 
@@ -10,6 +10,11 @@ const BillScreen = () => {
         backgroundColor={theme === 'dark' ? '#000000' : '#ffffff'}
         barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
       />
+      <ScrollView>
+        <View>
+          <Text>Bill Screen</Text>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
